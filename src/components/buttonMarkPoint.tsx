@@ -34,9 +34,7 @@ export const ButtonMarkPoint = ({ refetch }: ButtonMarkPointProps) => {
   return (
     <button
       type="submit"
-      className="bg-primary hover:bg-orange-500 flex items-center justify-center h-12 w-full md:w-52 rounded-md gap-1 shadow-lg 
-
-       "
+      className="bg-primary hover:bg-orange-500 flex items-center justify-center h-12 w-52 md:w-52 rounded-md gap-1 shadow-lg fixed md:relative bottom-0 mb-4 md:mb-0 mr-4 md:mr-0"
       onClick={() => mutation.mutate({ collaboratorCode: collaboratorCode, point: new Date() })}
     >
       <FaRegHandPointUp />

@@ -28,9 +28,9 @@ const Home = () => {
   });
 
   return (
-    <section className="min-h-screen flex flex-col  text-color-text px-4 md:px-20 py-10">
+    <section className="min-h-screen flex flex-col text-color-text px-4 md:px-20 py-10">
       <Header selectedValue={selectedValue} />
-      <div className="flex flex-col md:flex-row justify-center md:justify-between items-center py-6 gap-y-3">
+      <div className="flex flex-col md:flex-row justify-center md:justify-between items-center py-4 gap-y-3">
         <SelectMonth handleChange={handleChange} selectedValue={selectedValue} />
         <ButtonMarkPoint refetch={refetch} />
       </div>
