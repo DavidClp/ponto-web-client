@@ -1,46 +1,54 @@
-# Getting Started with Create React App
+# PONTO DIGITAL
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Front-End desenvolvido para desafio que consistia em desenvolver uma aplicação para realizar o controle de ponto dos colaboradores e permitir que eles tenham visibilidade das suas horas trabalhadas. Onde a solução é foca em três pontos principais:
 
-## Available Scripts
+- Visualização atualizada das horas trabalhadas no dia atual
+- Possibilidade de iniciar ou finalizar um turno
+- Acompanhamento do total de horas trabalhadas nos dias anteriores
 
-In the project directory, you can run:
+## Funcionalidades
 
-### `npm start`
+- Login: Autenticação via código do colaborador.
+- Criação e Atualização de Turnos: Registra e atualiza turnos com data e hora.
+- Consulta de Turnos: Recupera turnos por colaborador e período.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Protótipo
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Clique [aqui](https://www.figma.com/design/QrrQDeJAMRQ0xXpYagK6cG/Desafio-Ponto-Digital---David-Clipel?node-id=3-467&t=15juhoLKhTo9lHOn-0) para acessar o protótipo do front-end no Figma.
 
-### `npm test`
+## Tecnologias usadas
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Front-End feito com React.js
+- Typescript
+- React-routes-dom
+- React-icons
+- Tanstack/react-query
+- Eslint
+- Prettier
 
-### `npm run build`
+## Instalação e Configuração
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone o Repositório:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+  git clone https://github.com/DavidClp/ponto-web-client
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Instale as Dependências:
 
-### `npm run eject`
+```bash
+  npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. Configure as Variáveis de Ambiente:
+   Crie um arquivo .env na raiz do projeto com as seguintes variáveis:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```makefile
+  REACT_APP_API_URL=your_api_url
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+4. Execute o Projeto:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+  npm run start
+```

@@ -42,5 +42,3 @@ export const ButtonMarkPoint = ({ refetch }: ButtonMarkPointProps) => {
     </button>
   );
 };
-
-/*      md:relative bottom-0 mb-4 md:mb-0 mr-4 md:mr-0 */
