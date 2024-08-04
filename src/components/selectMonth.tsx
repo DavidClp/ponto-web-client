@@ -34,7 +34,7 @@ const SelectMonth = ({ handleChange, selectedValue }: Props) => {
     <select
       value={selectedValue}
       onChange={handleChange}
-      className="bg-bg-secondary focus:outline-none rounded-md px-4 w-52"
+      className="bg-bg-secondary focus:outline-none h-12 rounded-md px-4 md:w-52 w-full shadow-md"
     >
       {monthsList.map((month, index) => (
         <option key={index} value={month.value}>

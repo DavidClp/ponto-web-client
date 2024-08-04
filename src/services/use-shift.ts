@@ -1,6 +1,8 @@
+import { formatHours } from "../utils/formatHours";
+
 interface PropsUseShiftList {
-  collaboratorCode: string;
-  dateSring: string;
+  collaboratorCode: string | null;
+  dateFilterString: string;
 }
 
 export interface Shift {
@@ -12,11 +14,13 @@ export interface Shift {
   hours: string;
 }
 
-export async function fetchShiftList({ collaboratorCode, dateSring }: PropsUseShiftList) {
-  const response = await fetch(
-    `http://192.168.56.1:8888/shift?collaboratorCode=${collaboratorCode}&year=2024&month=08`
-  );
+export async function fetchShiftList({ collaboratorCode, dateFilterString }: PropsUseShiftList) {
+  const apiUrl = process.env.REACT_APP_API_URL;
+  const dateFilter = new Date(dateFilterString);
+  const year = dateFilter.getFullYear();
+  const month = dateFilter.getMonth() + 1;
 
+  const response = await fetch(`${apiUrl}/shift?collaboratorCode=${collaboratorCode}&year=${year}&month=${month}`);
   const result: Shift[] = await response.json();
 
   result.map(shift => {
@@ -26,15 +30,7 @@ export async function fetchShiftList({ collaboratorCode, dateSring }: PropsUseSh
       shift.exit = new Date(shift.exit);
     }
 
-    // TODO: criar funcao, clean code
-    const totalMinutes = Math.floor(shift.totalDurationMs / (1000 * 60));
-    const hours = Math.floor(totalMinutes / 60);
-    const minutes = totalMinutes % 60;
-
-    // Formatando como uma string "HH:MM"
-    const formattedTime = `${hours}:${minutes.toString().padStart(2, "0")}`;
-
-    shift.hours = `${hours}:${minutes.toString().padStart(2, "0")}`;
+    shift.hours = formatHours(shift.totalDurationMs);
   });
 
   return result;
