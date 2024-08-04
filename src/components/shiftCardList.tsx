@@ -18,7 +18,7 @@ export const ShiftCardList = ({ shiftList }: ShiftCardListProps) => {
   const shiftsGroupded = Object.entries(groupedShifts || {});
 
   return (
-    <div className="flex flex-col gap-3 w-full">
+    <div className="flex flex-col gap-3 w-full mb-8">
       {shiftsGroupded?.map(([date, shifts]) => (
         <ShiftCard date={date} shifts={shifts} />
       ))}
